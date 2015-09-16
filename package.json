@@ -7,8 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-      "passphrase": "cli.js"
+    "passphrase": "cli.js"
   },
   "author": "Jacob Degeling",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.8.1"
+  }
 }
