@@ -1,0 +1,14 @@
+{
+  "name": "passphrase",
+  "version": "0.1.0",
+  "description": "Easy-to-remember pasphrase generator",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+      "passphrase": "cli.js"
+  },
+  "author": "Jacob Degeling",
+  "license": "MIT"
+}
