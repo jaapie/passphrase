@@ -18,13 +18,22 @@ def get_words_by(words, part):
   typed_words = [a[0].lower() for a in words if a[1] == part and good_word(a[0])]
   return clean(typed_words)
 
+def get_words_of_types(words, types):
+  typed_words = [a[0].lower() for a in words if a[1] in types and good_word(a[0])]
+  return clean(typed_words)
+
 def main():
   words = nltk.corpus.brown.tagged_words()
 
+  # tags from http://www.comp.leeds.ac.uk/ccalas/tagsets/brown.html
+  filtered_words = get_words_of_types(words, ['NN', 'NNS', 'NP', 'NPS',
+      'NR', 'NRS', 'PN', 'OD', 'JJ', 'JJR', 'JJS', 'JJT', 'QL', 'RB', 'RBR',
+      'RBT', 'RN', 'RT', 'VB', 'VBD', 'VBG', 'VBN', 'VBZ', 'FW-NN'])
+
   print json.dumps({
-      'words': get_words(words)
+      'words': filtered_words
     })
 
-  # print 'there are ' + repr(len(words)) + ' words in the list'
+  # print 'there are ' + repr(len(filtered_words)) + ' words in the list'
 
 main()
